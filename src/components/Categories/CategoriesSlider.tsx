@@ -69,7 +69,7 @@ const CategorieSlider = () => {
     var deg = Math.floor(Math.random() * 360);
 
     var gradient = "linear-gradient(" + deg + "deg, " + "#" + createHex() + ", " + "#" +  createHex() + ")";
-    console.log(gradient, "gradient");
+    // console.log(gradient, "gradient");
     return gradient;
   }
 

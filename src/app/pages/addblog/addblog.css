@@ -1,0 +1,9 @@
+/* add blog styling  */
+.adblog_in{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
