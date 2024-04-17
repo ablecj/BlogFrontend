@@ -16,11 +16,16 @@
     margin-top: 50px;
     border-radius: 10px;
     overflow: hidden;
+    height: 91vh;
 }
 
 .authin .left{
     width: 40%;
-    background-color: rgb(208, 208, 208);
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .authin .right{
     width: 60%;

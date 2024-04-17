@@ -1,7 +1,8 @@
 :root{
     --col1: #cf6af4; 
-    --col2: #fdf6ff;
-    --col3: #333
+    --col2: #ebd6f2;
+    --col3: #333;
+    --errorcol: rgb(234, 21, 21);
 }
 
 *{
@@ -66,6 +67,20 @@
     box-shadow: 0px 0px 10px 0px var(--col1);
 }
 
+.forminput_cont select {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    margin: 0;
+    width: 95%;
+    display: block;
+    border: 1px solid var(--col1);
+  }
+
 .main_button{
     color: var(--col1);
     background-color: white;
@@ -87,7 +102,7 @@
     background-color: var(--col1);
     border: 1px solid var(--col1);
     color: #ffffff;
-    transition: all 2s ease-in-out;
+    transition: all 1s ease-in-out;
     border-radius: 50px;
     
 }
@@ -104,6 +119,22 @@
     align-items: center;
 }
 
+/* color for the error */
+.formerror{
+    color: var(--errorcol);
+}
+
+.loaderfullpage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1f1f1f43;
+    position: fixed;
+    z-index: 999;
+  }
+  
 
 
 
