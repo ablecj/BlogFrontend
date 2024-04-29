@@ -142,7 +142,8 @@ export default function Signin() {
               <label>Email</label>
               <input
                 type="email"
-                placeholder="Enter your name"
+                placeholder="Enter your email"
+                autoComplete="username"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
@@ -155,7 +156,8 @@ export default function Signin() {
               <label>Password</label>
               <input
                 type="password"
-                placeholder="Enter your name"
+                placeholder="Enter your password"
+                autoComplete="current-password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}

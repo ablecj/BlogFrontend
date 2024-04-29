@@ -1,4 +1,5 @@
 import React from 'react'
+import './CategoryCard.css'
 
 
 
@@ -14,19 +15,12 @@ const CategoryCard = (data : Category) => {
 
   const {name, path, bgColor} = data;
 
-  console.log(bgColor, "color");
+  // console.log(bgColor, "color");
 
   return (
-    <div style={{
-      width: '300px',
-      height: '200px',
-      background: bgColor,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-    }}>
+    <div className='categorycard'>
       <p
-      style={{color: 'black', fontSize: '15px'}}
+      style={{ fontSize: '14px'}}
       >{name}</p>
     </div>
   )

@@ -16,11 +16,67 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
+import { toast } from "react-toastify";
 
-// const width = window.innerWidth;
-// const height = window.innerHeight;
+// interface for the paragraph
+interface paragraphData {
+  title: string;
+  description: string;
+  image: File | null;
+  imageUrl: string;
+  position: string;
+  createdAt: Number | null;
+}
+// interface for the whole blog
+interface Blog {
+  _id: string;
+  title: string;
+  description: string;
+  image: File | null;
+  imageUrl: string;
+  paragraph: paragraphData[];
+  category: string;
+}
+
 
 const HomeSlider = () => {
+
+  const [blogs, setBlogs] = useState<Blog[]>([]);
+
+  
+  // function for getting the latest blogs
+  const get10LatestBlogs = () => {
+    fetch(`${process.env.NEXT_PUBLIC_BACKEND_API}/blog`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((response) => {
+        if (response.ok) {
+          console.log(response);
+          setBlogs(response.message.blogs);
+        } else {
+          toast(response.message, {
+            type: "error",
+          });
+        }
+      })
+      .catch((error) => {
+        toast(error.message, {
+          type: "error",
+        });
+      });
+  };
+
+  useEffect(()=> {
+    get10LatestBlogs();
+  },[])
+
+
   // state for setting the dimensions
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
@@ -56,7 +112,7 @@ const HomeSlider = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        {/* <SwiperSlide>
           <Image
             priority={true}
             src={img1}
@@ -80,7 +136,27 @@ const HomeSlider = () => {
               height: dimensions.height,
             }}
           />
-        </SwiperSlide>
+        </SwiperSlide> */}
+
+        {
+          blogs.length > 0 &&
+          blogs.map((blog) =>{
+            return (
+              <SwiperSlide>
+                <Image
+            priority={true}
+            src={blog.imageUrl}
+            alt="slide"
+            width={dimensions.width}
+            height={dimensions.height}
+            style={{
+              objectFit: "cover",  
+            }}
+          />
+              </SwiperSlide>
+            )
+          })
+        }
       </Swiper>
     </div>
   );

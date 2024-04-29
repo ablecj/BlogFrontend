@@ -134,7 +134,17 @@
     position: fixed;
     z-index: 999;
   }
-  
+ 
+  .sliderout h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--col1);
+    margin: 10px auto;
+    width: fit-content;
+    padding: 5px 10px;
+    border-bottom: 3px solid var(--col1);
+    align-self: center;
+  }
 
 
 

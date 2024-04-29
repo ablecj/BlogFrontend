@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "cookies-next": "^4.1.1",
+    "js-cookie": "^3.0.5",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
@@ -19,6 +20,7 @@
     "swiper": "^11.1.0"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

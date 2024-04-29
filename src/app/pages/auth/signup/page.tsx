@@ -139,20 +139,20 @@ export default function Signup() {
                 </div>
                 <div className="forminput_cont">
                     <label>Email</label>
-                    <input type="email" placeholder="Enter your name" 
+                    <input type="email" placeholder="Enter your Email" 
                     name="email" value={formData.email}
                      onChange={handleChange} />
                      {errors.email && (<span className="formerror">{errors.email}</span>)}
                 </div>
                 <div className="forminput_cont">
                     <label>Password</label>
-                    <input type="password" placeholder="Enter your name" 
+                    <input type="password" placeholder="Enter your Password" 
                     name="password" value={formData.password} onChange={handleChange} />
                     {errors.password && (<span className="formerror">{errors.password}</span>)}
                 </div>
                 <div className="forminput_cont">
                     <label>Confirm Password</label>
-                    <input type="password" placeholder="Enter your name" 
+                    <input type="password" placeholder="re-enter your Password" 
                     name="confirmPassword" value={formData.confirmPassword}
                     onChange={handleChange} />
                     {errors.confirmPassword && (<span className="formerror">{errors.confirmPassword}</span>)}
